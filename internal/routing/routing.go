@@ -7,6 +7,10 @@ const (
 
 	PauseKey = "pause"
 
+	ResumeKey = "resume"
+
+	QuitKey = "quit"
+
 	GameLogSlug = "game_logs"
 )
 
