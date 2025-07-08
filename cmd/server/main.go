@@ -25,6 +25,16 @@ func main() {
 		log.Fatalf("couldnt open channel: %v", err)
 	}
 
+	if _, _, err = pubsub.DeclareAndBind(
+		conn,
+		routing.ExchangePerilTopic,
+		routing.GameLogSlug,
+		routing.GameLogSlug+".*",
+		pubsub.Durable,
+	); err != nil {
+		log.Fatal(err)
+	}
+
 	gamelogic.PrintServerHelp()
 
 	for {

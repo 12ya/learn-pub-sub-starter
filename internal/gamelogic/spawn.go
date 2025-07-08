@@ -12,6 +12,7 @@ func (gs *GameState) CommandSpawn(words []string) error {
 
 	locationName := words[1]
 	locations := getAllLocations()
+
 	if _, ok := locations[Location(locationName)]; !ok {
 		return fmt.Errorf("error: %s is not a valid location", locationName)
 	}
