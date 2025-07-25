@@ -30,7 +30,7 @@ func main() {
 		routing.ExchangePerilTopic,
 		routing.GameLogSlug,
 		routing.GameLogSlug+".*",
-		pubsub.Durable,
+		pubsub.SimpleQueueDurable,
 	); err != nil {
 		log.Fatal(err)
 	}
